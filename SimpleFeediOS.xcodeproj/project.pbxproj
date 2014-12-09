@@ -16,6 +16,7 @@
 		A0159C3D1A377C2C000B5BE4 /* SimpleFeediOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C3C1A377C2C000B5BE4 /* SimpleFeediOSTests.m */; };
 		A0159C481A377E6B000B5BE4 /* FeedItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C471A377E6B000B5BE4 /* FeedItemCollectionViewCell.m */; };
 		A0159C4D1A377FB5000B5BE4 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C4C1A377FB5000B5BE4 /* APIManager.m */; };
+		A0159C661A379846000B5BE4 /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = A0159C651A379846000B5BE4 /* cert.der */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A0159C471A377E6B000B5BE4 /* FeedItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemCollectionViewCell.m; sourceTree = "<group>"; };
 		A0159C4B1A377FB5000B5BE4 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A0159C4C1A377FB5000B5BE4 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		A0159C651A379846000B5BE4 /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.der; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,18 +89,15 @@
 		A0159C1F1A377C2B000B5BE4 /* SimpleFeediOS */ = {
 			isa = PBXGroup;
 			children = (
+				A0159C511A378BA1000B5BE4 /* Storyboards & XIB */,
+				A0159C4F1A378B94000B5BE4 /* Controllers */,
+				A0159C501A378B9C000B5BE4 /* Managers */,
+				A0159C521A378BAC000B5BE4 /* Cells */,
+				A0159C4E1A378B8D000B5BE4 /* Resources */,
 				A0159C241A377C2C000B5BE4 /* AppDelegate.h */,
 				A0159C251A377C2C000B5BE4 /* AppDelegate.m */,
-				A0159C271A377C2C000B5BE4 /* FeedViewController.h */,
-				A0159C281A377C2C000B5BE4 /* FeedViewController.m */,
-				A0159C2A1A377C2C000B5BE4 /* Main.storyboard */,
 				A0159C2D1A377C2C000B5BE4 /* Images.xcassets */,
-				A0159C2F1A377C2C000B5BE4 /* LaunchScreen.xib */,
 				A0159C201A377C2B000B5BE4 /* Supporting Files */,
-				A0159C461A377E6B000B5BE4 /* FeedItemCollectionViewCell.h */,
-				A0159C471A377E6B000B5BE4 /* FeedItemCollectionViewCell.m */,
-				A0159C4B1A377FB5000B5BE4 /* APIManager.h */,
-				A0159C4C1A377FB5000B5BE4 /* APIManager.m */,
 			);
 			path = SimpleFeediOS;
 			sourceTree = "<group>";
@@ -127,6 +126,50 @@
 				A0159C3B1A377C2C000B5BE4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0159C4E1A378B8D000B5BE4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0159C651A379846000B5BE4 /* cert.der */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A0159C4F1A378B94000B5BE4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0159C271A377C2C000B5BE4 /* FeedViewController.h */,
+				A0159C281A377C2C000B5BE4 /* FeedViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A0159C501A378B9C000B5BE4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A0159C4B1A377FB5000B5BE4 /* APIManager.h */,
+				A0159C4C1A377FB5000B5BE4 /* APIManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		A0159C511A378BA1000B5BE4 /* Storyboards & XIB */ = {
+			isa = PBXGroup;
+			children = (
+				A0159C2F1A377C2C000B5BE4 /* LaunchScreen.xib */,
+				A0159C2A1A377C2C000B5BE4 /* Main.storyboard */,
+			);
+			name = "Storyboards & XIB";
+			sourceTree = "<group>";
+		};
+		A0159C521A378BAC000B5BE4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0159C461A377E6B000B5BE4 /* FeedItemCollectionViewCell.h */,
+				A0159C471A377E6B000B5BE4 /* FeedItemCollectionViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0159C661A379846000B5BE4 /* cert.der in Resources */,
 				A0159C2C1A377C2C000B5BE4 /* Main.storyboard in Resources */,
 				A0159C311A377C2C000B5BE4 /* LaunchScreen.xib in Resources */,
 				A0159C2E1A377C2C000B5BE4 /* Images.xcassets in Resources */,

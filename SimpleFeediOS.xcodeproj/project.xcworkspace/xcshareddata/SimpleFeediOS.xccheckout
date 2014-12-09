@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8C0D129C-C274-42AF-9905-72776943A88F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SimpleFeediOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1CAE10967A4DEEE8808E2B26693F2E41396AF971</key>
+		<string>https://github.com/TheHaad/SimpleFeediOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SimpleFeediOS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1CAE10967A4DEEE8808E2B26693F2E41396AF971</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TheHaad/SimpleFeediOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1CAE10967A4DEEE8808E2B26693F2E41396AF971</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1CAE10967A4DEEE8808E2B26693F2E41396AF971</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SimpleFeediOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

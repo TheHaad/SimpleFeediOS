@@ -33,6 +33,67 @@
     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 }
 
+/* FM - Found Certificate Pinning examples on the following sites:
+ https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning
+ http://www.wireharbor.com/ssl-pinning-in-ios-devices/
+ 
+ Required: Depending on the certificate used for the website, I needed to convert the
+ certificate to .der format with the following command in terminal:
+ openssl x509 -in mycertfile.pem -outform der -out cert.der
+ 
+ */
+
+-(BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:
+(NSURLProtectionSpace*)space
+{
+    return [[space authenticationMethod] isEqualToString: NSURLAuthenticationMethodServerTrust];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:
+(NSURLAuthenticationChallenge *)challenge
+{
+    if ([[[challenge protectionSpace] authenticationMethod] isEqualToString: NSURLAuthenticationMethodServerTrust])
+    {
+        do
+        {
+            SecTrustRef serverTrust = [[challenge protectionSpace] serverTrust];
+            if(nil == serverTrust)
+                break; /* failed */
+            
+            OSStatus status = SecTrustEvaluate(serverTrust, NULL);
+            if(!(errSecSuccess == status))
+                break; /* failed */
+            
+            SecCertificateRef serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0);
+            if(nil == serverCertificate)
+                break; /* failed */
+            
+            CFDataRef serverCertificateData = SecCertificateCopyData(serverCertificate);
+            if(nil == serverCertificateData)
+                break; /* failed */
+            
+            NSData *cert1 = CFBridgingRelease(SecCertificateCopyData(serverCertificate));
+            
+            NSString *file = [[NSBundle mainBundle] pathForResource:@"cert" ofType:@"der"];
+            NSData* cert2 = [NSData dataWithContentsOfFile:file];
+            
+            if(nil == cert1 || nil == cert2)
+                break; /* failed */
+            
+            const BOOL equal = [cert1 isEqualToData:cert2];
+            if(!equal)
+                break; /* failed */
+            
+            // The only good exit point
+            return [[challenge sender] useCredential: [NSURLCredential credentialForTrust: serverTrust]
+                          forAuthenticationChallenge: challenge];
+        } while(0);
+        
+        // Bad dog
+        return [[challenge sender] cancelAuthenticationChallenge: challenge];
+    }
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSError *error = nil;
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
