@@ -54,6 +54,21 @@
     [self.collectionView reloadData];
 }
 
+- (void)addPostStatus:(NSDictionary *)message {
+    NSString *alertTitle;
+    NSString *alertMessage;
+    if ([[message objectForKey:@"status"] intValue] == 200) {
+        alertTitle = @"Post Added";
+        alertMessage = @"Your post has been sucessfully submitted";
+    } else {
+        alertTitle = @"Post Failed";
+        alertMessage = @"Your post submission could not be added";
+    }
+    
+    UIAlertView *statusAlert = [[UIAlertView alloc] initWithTitle:alertTitle message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [statusAlert show];
+}
+
 - (void)loadData {
     [APIManager sharedManager].delegate = self;
     [[APIManager sharedManager] loadFeedItems];

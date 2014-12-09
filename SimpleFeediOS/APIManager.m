@@ -33,6 +33,20 @@
     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 }
 
+- (void)addNewPost:(NSString *)title withBody:(NSString *)body {
+    
+    NSString *requestString = @"https://www.corellianengineering.pw/newPost";
+    NSURL* requestUrl = [NSURL URLWithString:requestString];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:requestUrl
+                                             cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                         timeoutInterval:10.0f];
+    request.HTTPMethod = @"POST";
+    NSString *postBodyValues = [NSString stringWithFormat:@"email=testuserone@gmail.com&pwd=password12345&title=%@&body=%@",title, body];
+    [request setHTTPBody:[postBodyValues dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+}
+
 /* FM - Found Certificate Pinning examples on the following sites:
  https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning
  http://www.wireharbor.com/ssl-pinning-in-ios-devices/
@@ -96,13 +110,24 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSError *error = nil;
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    
-    if(!error) {
-        if (self.delegate) {
-            [self.delegate feedItemsDownloaded:jsonArray];
+    if ([connection.currentRequest.URL.description isEqualToString:@"https://www.corellianengineering.pw/allPosts"]) {
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        
+        if(!error) {
+            if (self.delegate) {
+                [self.delegate feedItemsDownloaded:jsonArray];
+            }
+        }
+    } else if ([connection.currentRequest.URL.description isEqualToString:@"https://www.corellianengineering.pw/newPost"]) {
+           NSDictionary *jsonMessageDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        
+        if(!error) {
+            if (self.delegate) {
+                [self.delegate addPostStatus:jsonMessageDictionary];
+            }
         }
     }
+
 }
 
 @end

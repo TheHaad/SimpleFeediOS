@@ -17,6 +17,7 @@
 		A0159C481A377E6B000B5BE4 /* FeedItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C471A377E6B000B5BE4 /* FeedItemCollectionViewCell.m */; };
 		A0159C4D1A377FB5000B5BE4 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C4C1A377FB5000B5BE4 /* APIManager.m */; };
 		A0159C661A379846000B5BE4 /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = A0159C651A379846000B5BE4 /* cert.der */; };
+		A0159C691A379E9D000B5BE4 /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0159C681A379E9D000B5BE4 /* AddPostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		A0159C4B1A377FB5000B5BE4 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A0159C4C1A377FB5000B5BE4 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		A0159C651A379846000B5BE4 /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.der; sourceTree = "<group>"; };
+		A0159C671A379E9D000B5BE4 /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
+		A0159C681A379E9D000B5BE4 /* AddPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 			children = (
 				A0159C271A377C2C000B5BE4 /* FeedViewController.h */,
 				A0159C281A377C2C000B5BE4 /* FeedViewController.m */,
+				A0159C671A379E9D000B5BE4 /* AddPostViewController.h */,
+				A0159C681A379E9D000B5BE4 /* AddPostViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			files = (
 				A0159C291A377C2C000B5BE4 /* FeedViewController.m in Sources */,
 				A0159C481A377E6B000B5BE4 /* FeedItemCollectionViewCell.m in Sources */,
+				A0159C691A379E9D000B5BE4 /* AddPostViewController.m in Sources */,
 				A0159C261A377C2C000B5BE4 /* AppDelegate.m in Sources */,
 				A0159C231A377C2C000B5BE4 /* main.m in Sources */,
 				A0159C4D1A377FB5000B5BE4 /* APIManager.m in Sources */,
