@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9PD-SZ-ubd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -130,15 +131,15 @@
                                                 <exclude reference="4za-bl-y0w"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="4p6-Gm-hv4"/>
-                                                <exclude reference="9Yu-UQ-dG6"/>
-                                                <exclude reference="JNw-pk-0wd"/>
                                                 <exclude reference="EqK-59-dj9"/>
                                                 <exclude reference="JtS-ye-VbV"/>
                                                 <exclude reference="P1g-3r-lUc"/>
                                                 <exclude reference="33h-h1-Sa9"/>
                                                 <exclude reference="FU4-aD-YXs"/>
                                                 <exclude reference="duR-bW-VZc"/>
+                                                <exclude reference="4p6-Gm-hv4"/>
+                                                <exclude reference="9Yu-UQ-dG6"/>
+                                                <exclude reference="JNw-pk-0wd"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -148,15 +149,15 @@
                                                 <include reference="4za-bl-y0w"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="4p6-Gm-hv4"/>
-                                                <include reference="9Yu-UQ-dG6"/>
-                                                <include reference="JNw-pk-0wd"/>
                                                 <include reference="EqK-59-dj9"/>
                                                 <include reference="JtS-ye-VbV"/>
                                                 <include reference="P1g-3r-lUc"/>
                                                 <include reference="33h-h1-Sa9"/>
                                                 <include reference="FU4-aD-YXs"/>
                                                 <include reference="duR-bW-VZc"/>
+                                                <include reference="4p6-Gm-hv4"/>
+                                                <include reference="9Yu-UQ-dG6"/>
+                                                <include reference="JNw-pk-0wd"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -226,6 +227,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OIL-ap-vAq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sHl-Xm-HwI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-HO-rPH">
@@ -365,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5s-tw-2Za" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.5" y="309"/>
+            <point key="canvasLocation" x="1369.5" y="289.5"/>
         </scene>
     </scenes>
 </document>

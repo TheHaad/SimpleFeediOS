@@ -104,6 +104,7 @@
         } while(0);
         
         // Bad dog
+        [self.delegate securityComprimised];
         return [[challenge sender] cancelAuthenticationChallenge: challenge];
     }
 }

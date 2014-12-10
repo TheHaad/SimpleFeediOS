@@ -69,6 +69,11 @@
     [statusAlert show];
 }
 
+- (void)securityComprimised {
+    UIAlertView *statusAlert = [[UIAlertView alloc] initWithTitle:@"Security Compromised" message:@"Can't validate the security of the API" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [statusAlert show];
+}
+
 - (void)loadData {
     [APIManager sharedManager].delegate = self;
     [[APIManager sharedManager] loadFeedItems];

@@ -11,6 +11,7 @@
 @protocol APIManagerDelegate <NSObject>
 - (void)feedItemsDownloaded:(NSArray *)feedItems;
 - (void)addPostStatus:(NSDictionary *)message;
+- (void)securityComprimised;
 @end
 
 @interface APIManager : NSObject
